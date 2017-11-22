@@ -14,8 +14,8 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "mashape/unirest-php": "~3.0.1",
-        "apimatic/jsonmapper": "~1.0.0"
+        "mashape/unirest-php": "~3.0",
+        "apimatic/jsonmapper": "~1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7 || ^6.4",
