@@ -122,5 +122,4 @@ class HttpRequest
     {
         $this->parameters = $parameters;
     }
-
 }

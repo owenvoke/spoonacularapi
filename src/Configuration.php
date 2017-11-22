@@ -9,9 +9,10 @@ namespace SpoonacularAPILib;
 
 /**
  * All configuration including auth info and base URI for the API access
- * are configured in this class. 
+ * are configured in this class.
  */
-class Configuration {
+class Configuration
+{
     /**
      * The base Uri for API calls
      * @var string
@@ -26,5 +27,4 @@ class Configuration {
      * @todo Replace the $xMashapeKey with an appropriate value
      */
     public static $xMashapeKey = 'TODO: Replace';
-
 }

@@ -21,7 +21,8 @@ use Unirest\Request;
 /**
  * @todo Add a general description for this controller.
  */
-class APIController extends BaseController {
+class APIController extends BaseController
+{
 
     /**
      * @var APIController The reference to *Singleton* instance of this class
@@ -47,9 +48,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getProductInformation (
-                $id) 
-    {
+    public function getProductInformation(
+        $id
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -73,7 +74,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -84,12 +85,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -100,9 +101,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function findSimilarRecipes (
-                $id) 
-    {
+    public function findSimilarRecipes(
+        $id
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -126,7 +127,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -137,12 +138,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -153,9 +154,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getAutocompleteIngredientSearch (
-                $query) 
-    {
+    public function getAutocompleteIngredientSearch(
+        $query
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -179,7 +180,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -190,12 +191,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -210,13 +211,13 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createVisualizePriceBreakdown (
-                $ingredientList,
-                $servings,
-                $defaultCss = 'checked',
-                $mode = 1,
-                $fieldParameters = NULL) 
-    {
+    public function createVisualizePriceBreakdown(
+        $ingredientList,
+        $servings,
+        $defaultCss = 'checked',
+        $mode = 1,
+        $fieldParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -243,7 +244,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -254,12 +255,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -273,12 +274,12 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createVisualizeNutrition (
-                $ingredientList,
-                $servings,
-                $defaultCss = 'checked',
-                $fieldParameters = NULL) 
-    {
+    public function createVisualizeNutrition(
+        $ingredientList,
+        $servings,
+        $defaultCss = 'checked',
+        $fieldParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -304,7 +305,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -315,12 +316,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -336,14 +337,14 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createVisualizeIngredients (
-                $ingredientList,
-                $servings,
-                $defaultCss = 'checked',
-                $measure = 'metric',
-                $view = 'grid',
-                $fieldParameters = NULL) 
-    {
+    public function createVisualizeIngredients(
+        $ingredientList,
+        $servings,
+        $defaultCss = 'checked',
+        $measure = 'metric',
+        $view = 'grid',
+        $fieldParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -371,7 +372,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -382,12 +383,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -398,9 +399,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getSummarizeRecipe (
-                $id) 
-    {
+    public function getSummarizeRecipe(
+        $id
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -424,7 +425,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -435,12 +436,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -454,12 +455,12 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function searchGroceryProducts (
-                $query,
-                $number = 10,
-                $offset = 0,
-                $queryParameters = NULL) 
-    {
+    public function searchGroceryProducts(
+        $query,
+        $number = 10,
+        $offset = 0,
+        $queryParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -488,7 +489,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -499,12 +500,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -515,9 +516,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getQuickAnswer (
-                $q) 
-    {
+    public function getQuickAnswer(
+        $q
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -541,7 +542,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -552,12 +553,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -568,9 +569,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getRecipeInformation (
-                $id) 
-    {
+    public function getRecipeInformation(
+        $id
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -594,7 +595,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -605,12 +606,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -622,10 +623,10 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createParseIngredients (
-                $ingredientList,
-                $servings) 
-    {
+    public function createParseIngredients(
+        $ingredientList,
+        $servings
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -650,7 +651,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -661,12 +662,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -678,10 +679,10 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createMapIngredients (
-                $ingredientList,
-                $servings) 
-    {
+    public function createMapIngredients(
+        $ingredientList,
+        $servings
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -706,7 +707,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -717,12 +718,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -735,11 +736,11 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getExtractRecipeFromWebsite (
-                $url,
-                $forceExtraction = false,
-                $queryParameters = NULL) 
-    {
+    public function getExtractRecipeFromWebsite(
+        $url,
+        $forceExtraction = false,
+        $queryParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -767,7 +768,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -778,12 +779,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -795,10 +796,10 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getComputeDailyMealPlan (
-                $targetCalories,
-                $timeFrame) 
-    {
+    public function getComputeDailyMealPlan(
+        $targetCalories,
+        $timeFrame
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -823,7 +824,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -834,12 +835,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -850,9 +851,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createClassifyGroceryProductsBatch (
-                $productJsonArray) 
-    {
+    public function createClassifyGroceryProductsBatch(
+        $productJsonArray
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -872,7 +873,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -883,12 +884,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -900,10 +901,10 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createClassifyCuisine (
-                $ingredientList,
-                $title) 
-    {
+    public function createClassifyCuisine(
+        $ingredientList,
+        $title
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -928,7 +929,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -939,12 +940,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -955,9 +956,9 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createClassifyAGroceryProduct (
-                $productJson) 
-    {
+    public function createClassifyAGroceryProduct(
+        $productJson
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -977,7 +978,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -988,12 +989,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         $mapper = $this->getJsonMapper();
 
@@ -1015,18 +1016,18 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function searchRecipes (
-                $query,
-                $cuisine = 'italian',
-                $diet = 'vegetarian',
-                $excludeIngredients = 'coconut',
-                $intolerances = 'egg, gluten',
-                $limitLicense = false,
-                $number = 10,
-                $offset = 0,
-                $type = 'main course',
-                $queryParameters = NULL) 
-    {
+    public function searchRecipes(
+        $query,
+        $cuisine = 'italian',
+        $diet = 'vegetarian',
+        $excludeIngredients = 'coconut',
+        $intolerances = 'egg, gluten',
+        $limitLicense = false,
+        $number = 10,
+        $offset = 0,
+        $type = 'main course',
+        $queryParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -1061,7 +1062,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -1072,12 +1073,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -1096,17 +1097,17 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function findByNutrients (
-                $maxcalories = 1500,
-                $maxcarbs = 100,
-                $maxfat = 100,
-                $maxprotein = 100,
-                $mincalories = 0,
-                $minCarbs = 0,
-                $minfat = 0,
-                $minProtein = 0,
-                $queryParameters = NULL) 
-    {
+    public function findByNutrients(
+        $maxcalories = 1500,
+        $maxcarbs = 100,
+        $maxfat = 100,
+        $maxprotein = 100,
+        $mincalories = 0,
+        $minCarbs = 0,
+        $minfat = 0,
+        $minProtein = 0,
+        $queryParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -1140,7 +1141,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -1151,12 +1152,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
@@ -1171,13 +1172,13 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function findByIngredients (
-                $ingredients,
-                $limitLicense = false,
-                $number = 5,
-                $ranking = 1,
-                $queryParameters = NULL) 
-    {
+    public function findByIngredients(
+        $ingredients,
+        $limitLicense = false,
+        $number = 5,
+        $ranking = 1,
+        $queryParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -1207,7 +1208,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -1218,12 +1219,12 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         $mapper = $this->getJsonMapper();
 
@@ -1248,21 +1249,21 @@ class APIController extends BaseController {
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function createRecipeCard (
-                $backgroundImage,
-                $image,
-                $ingredients,
-                $instructions,
-                $mask,
-                $readyInMinutes,
-                $servings,
-                $title,
-                $author = 'Emily Henderson',
-                $backgroundColor = '#ffffff',
-                $fontColor = '#333333',
-                $source = 'spoonacular.com',
-                $fieldParameters = NULL) 
-    {
+    public function createRecipeCard(
+        $backgroundImage,
+        $image,
+        $ingredients,
+        $instructions,
+        $mask,
+        $readyInMinutes,
+        $servings,
+        $title,
+        $author = 'Emily Henderson',
+        $backgroundColor = '#ffffff',
+        $fontColor = '#333333',
+        $source = 'spoonacular.com',
+        $fieldParameters = null
+    ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
         
@@ -1297,7 +1298,7 @@ class APIController extends BaseController {
 
         //call on-before Http callback
         $_httpRequest = new HttpRequest(HttpMethod::POST, $_headers, $_queryUrl, $_parameters);
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
@@ -1308,15 +1309,13 @@ class APIController extends BaseController {
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
         //call on-after Http callback
-        if($this->getHttpCallBack() != null) {
+        if ($this->getHttpCallBack() != null) {
             $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
         }
 
         //handle errors defined at the API level
-        $this->validateResponse($_httpResponse,$_httpContext);
+        $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
     }
-        
-
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * SpoonacularAPILib
  *
@@ -12,7 +12,8 @@ use JsonSerializable;
 /**
  * @todo Write general description for this model
  */
-class Classifiedproduct implements JsonSerializable {
+class Classifiedproduct implements JsonSerializable
+{
     /**
      * @todo Write general description for this property
      * @required
@@ -44,14 +45,13 @@ class Classifiedproduct implements JsonSerializable {
     /**
      * Constructor to set initial or default values of member properties
      * @param   array             $breadcrumbs   Initialization value for the property $this->breadcrumbs
-     * @param   string            $category      Initialization value for the property $this->category   
-     * @param   string            $cleanTitle    Initialization value for the property $this->cleanTitle 
-     * @param   integer           $usdaCode      Initialization value for the property $this->usdaCode   
+     * @param   string            $category      Initialization value for the property $this->category
+     * @param   string            $cleanTitle    Initialization value for the property $this->cleanTitle
+     * @param   integer           $usdaCode      Initialization value for the property $this->usdaCode
      */
     public function __construct()
     {
-        if(4 == func_num_args())
-        {
+        if (4 == func_num_args()) {
             $this->breadcrumbs = func_get_arg(0);
             $this->category    = func_get_arg(1);
             $this->cleanTitle  = func_get_arg(2);

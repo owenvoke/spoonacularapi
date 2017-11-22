@@ -17,7 +17,7 @@ class SpoonacularAPIClient
     /**
      * Constructor with authentication and configuration parameters
      */
-    public function __construct($xMashapeKey = NULL)
+    public function __construct($xMashapeKey = null)
     {
         Configuration::$xMashapeKey = $xMashapeKey ? $xMashapeKey : Configuration::$xMashapeKey;
     }

@@ -77,8 +77,9 @@ class HttpCallBack
      */
     public function callOnBeforeRequest(HttpRequest $httpRequest)
     {
-        if($this->onBeforeRequest != null)
+        if ($this->onBeforeRequest != null) {
             call_user_func($this->onBeforeRequest, $httpRequest);
+        }
     }
 
     /**
@@ -87,7 +88,8 @@ class HttpCallBack
      */
     public function callOnAfterRequest(HttpContext $httpContext)
     {
-        if($this->onAfterRequest != null)
+        if ($this->onAfterRequest != null) {
             call_user_func($this->onAfterRequest, $httpContext);
+        }
     }
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * SpoonacularAPILib
  *
@@ -12,7 +12,8 @@ use JsonSerializable;
 /**
  * @todo Write general description for this model
  */
-class FindByIngredientsModel implements JsonSerializable {
+class FindByIngredientsModel implements JsonSerializable
+{
     /**
      * @todo Write general description for this property
      * @required
@@ -57,17 +58,16 @@ class FindByIngredientsModel implements JsonSerializable {
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param   integer           $id                      Initialization value for the property $this->id                   
-     * @param   string            $image                   Initialization value for the property $this->image                
-     * @param   integer           $likes                   Initialization value for the property $this->likes                
+     * @param   integer           $id                      Initialization value for the property $this->id
+     * @param   string            $image                   Initialization value for the property $this->image
+     * @param   integer           $likes                   Initialization value for the property $this->likes
      * @param   integer           $missedIngredientCount   Initialization value for the property $this->missedIngredientCount
-     * @param   string            $title                   Initialization value for the property $this->title                
-     * @param   integer           $usedIngredientCount     Initialization value for the property $this->usedIngredientCount  
+     * @param   string            $title                   Initialization value for the property $this->title
+     * @param   integer           $usedIngredientCount     Initialization value for the property $this->usedIngredientCount
      */
     public function __construct()
     {
-        if(6 == func_num_args())
-        {
+        if (6 == func_num_args()) {
             $this->id                    = func_get_arg(0);
             $this->image                 = func_get_arg(1);
             $this->likes                 = func_get_arg(2);

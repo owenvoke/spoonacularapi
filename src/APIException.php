@@ -12,7 +12,8 @@ use Exception;
 /**
  * Class for exceptions when there is a network error, status code error, etc.
  */
-class APIException extends Exception {
+class APIException extends Exception
+{
     /**
      * Error message
      * @var string
@@ -33,11 +34,12 @@ class APIException extends Exception {
      */
     public function __construct($reason, $context)
     {
-        parent::__construct($reason, $context->getResponse()->getStatusCode(), NULL);
+        parent::__construct($reason, $context->getResponse()->getStatusCode(), null);
         $this->context = $context;
         $this->errorMessage = $reason;
-        if(get_class() != 'APIException')
+        if (get_class() != 'APIException') {
             $this->unbox();
+        }
     }
 
     public function unbox()

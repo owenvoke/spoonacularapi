@@ -12,7 +12,8 @@ use InvalidArgumentException;
 /**
  * API utility class
  */
-class APIHelper {
+class APIHelper
+{
     /**
     * Replaces template parameters in the given url
     * @param    string  $url         The query string builder to replace the template parameters
@@ -52,7 +53,7 @@ class APIHelper {
     * Appends the given set of parameters to the given query string
     * @param    string  $queryBuilder   The query url string to append the parameters
     * @param    array   $parameters     The parameters to append
-    * @return   void 
+    * @return   void
     */
     public static function appendUrlWithQueryParameters(&$queryBuilder, $parameters)
     {
@@ -80,7 +81,7 @@ class APIHelper {
     public static function cleanUrl($url)
     {
         //perform parameter validation
-        if(is_null($url) || !is_string($url)) {
+        if (is_null($url) || !is_string($url)) {
             throw new InvalidArgumentException('Invalid Url.');
         }
         //ensure that the urls are absolute
@@ -105,22 +106,23 @@ class APIHelper {
      * Will handle files as well as models if found in the $data.
      *
      * @source https://bugs.php.net/patch-display.php?bug_id=67477&patch=add-http_build_query_develop-function&revision=latest
-     * 
+     *
      * @param  array $data Input data to be encoded
      * @return array       Encoded data
      */
-    public static function httpBuildQueryDevelop($data) {
+    public static function httpBuildQueryDevelop($data)
+    {
         // if not array, $data is okay
-        if(!is_array($data)) {
+        if (!is_array($data)) {
             return $data;
         }
-        foreach($data as $key => $val) {
-            if(is_array($val)) {
-                foreach($val as $k => $v) {
-                    if(is_array($v)) {
+        foreach ($data as $key => $val) {
+            if (is_array($val)) {
+                foreach ($val as $k => $v) {
+                    if (is_array($v)) {
                         // flatten array and merge
                         $data = array_merge($data, static::httpBuildQueryDevelop(array( "{$key}[{$k}]" => $v)));
-                    } else if(is_object($v)) {
+                    } elseif (is_object($v)) {
                         // flatten object to array and merge
                         $data = array_merge($data, static::httpBuildQueryDevelop(array( "{$key}[{$k}]" => $v->jsonSerialize())));
                     } else {
@@ -143,11 +145,11 @@ class APIHelper {
      */
     public static function deserialize($json, $instance = null, $isArray = false)
     {
-        if($instance == null) {
+        if ($instance == null) {
             return json_decode($json, true);
         } else {
             $mapper = new \apimatic\jsonmapper\JsonMapper();
-            if($isArray) {
+            if ($isArray) {
                 return $mapper->mapArray(json_decode($json), array(), $instance);
             } else {
                 return $mapper->map(json_decode($json), $instance);
