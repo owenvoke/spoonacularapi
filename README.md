@@ -886,7 +886,7 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 [ico-travis]: https://img.shields.io/travis/pxgamer/spoonacularapi/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/111661083/shield
 [ico-code-quality]: https://img.shields.io/codecov/c/github/pxgamer/spoonacularapi.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/apimatic/spoonacularapi.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/pxgamer/spoonacularapi.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/pxgamer/spoonacularapi
 [link-travis]: https://travis-ci.org/pxgamer/spoonacularapi
