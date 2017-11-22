@@ -122,10 +122,16 @@ class APIHelper
                 foreach ($val as $k => $v) {
                     if (is_array($v)) {
                         // flatten array and merge
-                        $data = array_merge($data, static::httpBuildQueryDevelop(["{$key}[{$k}]" => $v]));
+                        $data = array_merge(
+                            $data,
+                            static::httpBuildQueryDevelop(["{$key}[{$k}]" => $v])
+                        );
                     } elseif (is_object($v)) {
                         // flatten object to array and merge
-                        $data = array_merge($data, static::httpBuildQueryDevelop(["{$key}[{$k}]" => $v->jsonSerialize()]));
+                        $data = array_merge(
+                            $data,
+                            static::httpBuildQueryDevelop(["{$key}[{$k}]" => $v->jsonSerialize()])
+                        );
                     } else {
                         // does not need flattening; primitive
                         $data["{$key}[{$k}]"] = $v;
