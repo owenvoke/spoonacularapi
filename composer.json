@@ -1,5 +1,5 @@
 {
-    "name": "apimatic/spoonacularapi",
+    "name": "pxgamer/spoonacularapi",
     "type": "library",
     "description": "The spoonacular Nutrition, Recipe, and Food API allows you to access over 360,000 recipes and 80,000 food products.",
     "keywords": [
@@ -7,7 +7,6 @@
         "API",
         "SDK"
     ],
-    "homepage": "https://apimatic.io",
     "license": "MIT",
     "require": {
         "php": ">=5.6",
@@ -23,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SpoonacularAPILib\\": "src"
+            "pxgamer\\SpoonacularAPILib\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SpoonacularAPILib\\": "tests"
+            "pxgamer\\SpoonacularAPILib\\": "tests"
         }
     },
     "scripts": {

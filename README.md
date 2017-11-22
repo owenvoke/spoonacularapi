@@ -1,7 +1,7 @@
 # spoonacularapi
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
+[![Software License][ico-license]](LICENSE)
 [![Build Status][ico-travis]][link-travis]
 [![Style CI][ico-styleci]][link-styleci]
 [![Code Coverage][ico-code-quality]][link-code-quality]
@@ -33,8 +33,6 @@ You need the following information for initializing the API client.
 | Parameter | Description |
 |-----------|-------------|
 | xMashapeKey | The Mashape application you want to use for this session. |
-
-
 
 API client can be initialized as following.
 
@@ -881,20 +879,20 @@ If you discover any security related issues, please email owzie123@gmail.com ins
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/apimatic/spoonacularapi.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/pxgamer/spoonacularapi.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/apimatic/spoonacularapi/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/pxgamer/spoonacularapi/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/111661083/shield
 [ico-code-quality]: https://img.shields.io/codecov/c/github/pxgamer/spoonacularapi.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/apimatic/spoonacularapi.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/apimatic/spoonacularapi
+[link-packagist]: https://packagist.org/packages/pxgamer/spoonacularapi
 [link-travis]: https://travis-ci.org/pxgamer/spoonacularapi
 [link-styleci]: https://styleci.io/repos/111661083
 [link-code-quality]: https://codecov.io/gh/pxgamer/spoonacularapi
-[link-downloads]: https://packagist.org/packages/apimatic/spoonacularapi
+[link-downloads]: https://packagist.org/packages/pxgamer/spoonacularapi
 [link-author]: https://github.com/pxgamer
 [link-original-author]: https://github.com/apimatic
 [link-contributors]: ../../contributors
