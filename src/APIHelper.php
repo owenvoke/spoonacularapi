@@ -15,11 +15,11 @@ use InvalidArgumentException;
 class APIHelper
 {
     /**
-    * Replaces template parameters in the given url
-    * @param    string  $url         The query string builder to replace the template parameters
-    * @param    array   $parameters  The parameters to replace in the url
-    * @return   string  The processed url
-    */
+     * Replaces template parameters in the given url
+     * @param    string $url        The query string builder to replace the template parameters
+     * @param    array  $parameters The parameters to replace in the url
+     * @return   string  The processed url
+     */
     public static function appendUrlWithTemplateParameters($url, $parameters)
     {
         //perform parameter validation
@@ -43,18 +43,18 @@ class APIHelper
             }
 
             //find the template parameter and replace it with its value
-            $url = str_replace('{' . strval($key) . '}', $replaceValue, $url);
+            $url = str_replace('{'.strval($key).'}', $replaceValue, $url);
         }
 
         return $url;
     }
 
     /**
-    * Appends the given set of parameters to the given query string
-    * @param    string  $queryBuilder   The query url string to append the parameters
-    * @param    array   $parameters     The parameters to append
-    * @return   void
-    */
+     * Appends the given set of parameters to the given query string
+     * @param    string $queryBuilder The query url string to append the parameters
+     * @param    array  $parameters   The parameters to append
+     * @return   void
+     */
     public static function appendUrlWithQueryParameters(&$queryBuilder, $parameters)
     {
         //perform parameter validation
@@ -68,16 +68,17 @@ class APIHelper
         $hasParams = (strrpos($queryBuilder, '?') > 0);
 
         //if already has parameters, use the &amp; to append new parameters
-        $queryBuilder = $queryBuilder . (($hasParams) ? '&' : '?');
+        $queryBuilder = $queryBuilder.(($hasParams) ? '&' : '?');
 
         //append parameters
-        $queryBuilder = $queryBuilder . http_build_query($parameters);
+        $queryBuilder = $queryBuilder.http_build_query($parameters);
     }
 
     /**
-    * Validates and processes the given Url
-    * @param    string  $url The given Url to process
-    * @return   string       Pre-processed Url as string */
+     * Validates and processes the given Url
+     * @param    string $url The given Url to process
+     * @return   string       Pre-processed Url as string
+     */
     public static function cleanUrl($url)
     {
         //perform parameter validation
@@ -121,10 +122,10 @@ class APIHelper
                 foreach ($val as $k => $v) {
                     if (is_array($v)) {
                         // flatten array and merge
-                        $data = array_merge($data, static::httpBuildQueryDevelop(array( "{$key}[{$k}]" => $v)));
+                        $data = array_merge($data, static::httpBuildQueryDevelop(["{$key}[{$k}]" => $v]));
                     } elseif (is_object($v)) {
                         // flatten object to array and merge
-                        $data = array_merge($data, static::httpBuildQueryDevelop(array( "{$key}[{$k}]" => $v->jsonSerialize())));
+                        $data = array_merge($data, static::httpBuildQueryDevelop(["{$key}[{$k}]" => $v->jsonSerialize()]));
                     } else {
                         // does not need flattening; primitive
                         $data["{$key}[{$k}]"] = $v;
@@ -138,9 +139,9 @@ class APIHelper
 
     /**
      * Deserialize a Json string
-     * @param  string   $json       A valid Json string
-     * @param  mixed    $instance   Instance of an object to map the json into
-     * @param  boolean  $isArray    Is the Json an object array?
+     * @param  string  $json     A valid Json string
+     * @param  mixed   $instance Instance of an object to map the json into
+     * @param  boolean $isArray  Is the Json an object array?
      * @return mixed                Decoded Json
      */
     public static function deserialize($json, $instance = null, $isArray = false)
@@ -150,7 +151,7 @@ class APIHelper
         } else {
             $mapper = new \apimatic\jsonmapper\JsonMapper();
             if ($isArray) {
-                return $mapper->mapArray(json_decode($json), array(), $instance);
+                return $mapper->mapArray(json_decode($json), [], $instance);
             } else {
                 return $mapper->map(json_decode($json), $instance);
             }

@@ -8,8 +8,8 @@
 namespace SpoonacularAPILib\Http;
 
 /**
-* Http response received
-*/
+ * Http response received
+ */
 class HttpResponse
 {
     /**

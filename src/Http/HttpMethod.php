@@ -8,8 +8,8 @@
 namespace SpoonacularAPILib\Http;
 
 /**
-* HTTP Methods Enumeration
-*/
+ * HTTP Methods Enumeration
+ */
 class HttpMethod
 {
     const GET = "Get";

@@ -44,18 +44,18 @@ class Classifiedproduct implements JsonSerializable
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param   array             $breadcrumbs   Initialization value for the property $this->breadcrumbs
-     * @param   string            $category      Initialization value for the property $this->category
-     * @param   string            $cleanTitle    Initialization value for the property $this->cleanTitle
-     * @param   integer           $usdaCode      Initialization value for the property $this->usdaCode
+     * @param   array   $breadcrumbs Initialization value for the property $this->breadcrumbs
+     * @param   string  $category    Initialization value for the property $this->category
+     * @param   string  $cleanTitle  Initialization value for the property $this->cleanTitle
+     * @param   integer $usdaCode    Initialization value for the property $this->usdaCode
      */
     public function __construct()
     {
         if (4 == func_num_args()) {
             $this->breadcrumbs = func_get_arg(0);
-            $this->category    = func_get_arg(1);
-            $this->cleanTitle  = func_get_arg(2);
-            $this->usdaCode    = func_get_arg(3);
+            $this->category = func_get_arg(1);
+            $this->cleanTitle = func_get_arg(2);
+            $this->usdaCode = func_get_arg(3);
         }
     }
 
@@ -65,11 +65,11 @@ class Classifiedproduct implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        $json = array();
+        $json = [];
         $json['breadcrumbs'] = $this->breadcrumbs;
-        $json['category']    = $this->category;
-        $json['cleanTitle']  = $this->cleanTitle;
-        $json['usdaCode']    = $this->usdaCode;
+        $json['category'] = $this->category;
+        $json['cleanTitle'] = $this->cleanTitle;
+        $json['usdaCode'] = $this->usdaCode;
 
         return $json;
     }

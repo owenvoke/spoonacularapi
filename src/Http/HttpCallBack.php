@@ -8,8 +8,8 @@
 namespace SpoonacularAPILib\Http;
 
 /**
-* HttpCallBack allows defining callables for pre and post API calls.
-*/
+ * HttpCallBack allows defining callables for pre and post API calls.
+ */
 class HttpCallBack
 {
     /**

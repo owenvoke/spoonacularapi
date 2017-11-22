@@ -21,7 +21,7 @@ class SpoonacularAPIClient
     {
         Configuration::$xMashapeKey = $xMashapeKey ? $xMashapeKey : Configuration::$xMashapeKey;
     }
- 
+
     /**
      * Singleton access to API controller
      * @return Controllers\APIController The *Singleton* instance

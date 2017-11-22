@@ -8,8 +8,8 @@
 namespace SpoonacularAPILib\Http;
 
 /**
-* Represents an Http call in context
-*/
+ * Represents an Http call in context
+ */
 class HttpContext
 {
     /**

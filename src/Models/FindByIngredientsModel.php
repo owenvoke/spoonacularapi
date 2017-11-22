@@ -58,22 +58,22 @@ class FindByIngredientsModel implements JsonSerializable
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param   integer           $id                      Initialization value for the property $this->id
-     * @param   string            $image                   Initialization value for the property $this->image
-     * @param   integer           $likes                   Initialization value for the property $this->likes
-     * @param   integer           $missedIngredientCount   Initialization value for the property $this->missedIngredientCount
-     * @param   string            $title                   Initialization value for the property $this->title
-     * @param   integer           $usedIngredientCount     Initialization value for the property $this->usedIngredientCount
+     * @param   integer $id                    Initialization value for the property $this->id
+     * @param   string  $image                 Initialization value for the property $this->image
+     * @param   integer $likes                 Initialization value for the property $this->likes
+     * @param   integer $missedIngredientCount Initialization value for the property $this->missedIngredientCount
+     * @param   string  $title                 Initialization value for the property $this->title
+     * @param   integer $usedIngredientCount   Initialization value for the property $this->usedIngredientCount
      */
     public function __construct()
     {
         if (6 == func_num_args()) {
-            $this->id                    = func_get_arg(0);
-            $this->image                 = func_get_arg(1);
-            $this->likes                 = func_get_arg(2);
+            $this->id = func_get_arg(0);
+            $this->image = func_get_arg(1);
+            $this->likes = func_get_arg(2);
             $this->missedIngredientCount = func_get_arg(3);
-            $this->title                 = func_get_arg(4);
-            $this->usedIngredientCount   = func_get_arg(5);
+            $this->title = func_get_arg(4);
+            $this->usedIngredientCount = func_get_arg(5);
         }
     }
 
@@ -83,13 +83,13 @@ class FindByIngredientsModel implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        $json = array();
-        $json['id']                    = $this->id;
-        $json['image']                 = $this->image;
-        $json['likes']                 = $this->likes;
+        $json = [];
+        $json['id'] = $this->id;
+        $json['image'] = $this->image;
+        $json['likes'] = $this->likes;
         $json['missedIngredientCount'] = $this->missedIngredientCount;
-        $json['title']                 = $this->title;
-        $json['usedIngredientCount']   = $this->usedIngredientCount;
+        $json['title'] = $this->title;
+        $json['usedIngredientCount'] = $this->usedIngredientCount;
 
         return $json;
     }

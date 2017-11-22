@@ -7,17 +7,16 @@
 
 namespace SpoonacularAPILib\Controllers;
 
+use apimatic\jsonmapper\JsonMapper;
+use SpoonacularAPILib\APIException;
+use SpoonacularAPILib\Exceptions;
 use SpoonacularAPILib\Http\HttpCallBack;
 use SpoonacularAPILib\Http\HttpContext;
 use SpoonacularAPILib\Http\HttpResponse;
-use SpoonacularAPILib\APIException;
-use SpoonacularAPILib\Exceptions;
-use \apimatic\jsonmapper\JsonMapper;
-use Unirest\Request;
 
 /**
-* Base controller
-*/
+ * Base controller
+ */
 class BaseController
 {
     /**
@@ -26,7 +25,7 @@ class BaseController
      */
     private $httpCallBack = null;
 
-     /**
+    /**
      * Constructor that sets the timeout of requests
      */
 

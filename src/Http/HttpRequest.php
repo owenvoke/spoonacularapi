@@ -8,8 +8,8 @@
 namespace SpoonacularAPILib\Http;
 
 /**
-* Represents a single Http Request
-*/
+ * Represents a single Http Request
+ */
 class HttpRequest
 {
     /**
@@ -35,7 +35,7 @@ class HttpRequest
      * @var array
      */
     private $parameters = null;
-    
+
     /**
      * Create a new HttpRequest
      * @param string     $httpMethod Http method
@@ -59,7 +59,7 @@ class HttpRequest
     {
         return $this->httpMethod;
     }
-    
+
     /**
      * Set http method
      * @param string $httpMethod Http Method as defined in HttpMethod class
@@ -77,7 +77,7 @@ class HttpRequest
     {
         return $this->headers;
     }
-    
+
     /**
      * Set headers
      * @param array $headers Headers as map
@@ -95,7 +95,7 @@ class HttpRequest
     {
         return $this->queryUrl;
     }
-    
+
     /**
      * Set query url
      * @param string $queryUrl Query url
@@ -113,7 +113,7 @@ class HttpRequest
     {
         return $this->parameters;
     }
-    
+
     /**
      * Set parameters
      * @param array $parameters Map of input parameters

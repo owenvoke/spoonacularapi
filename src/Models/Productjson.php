@@ -38,16 +38,16 @@ class Productjson implements JsonSerializable
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param   string            $pluCode    Initialization value for the property $this->pluCode
-     * @param   string            $title      Initialization value for the property $this->title
-     * @param   string            $upc        Initialization value for the property $this->upc
+     * @param   string $pluCode Initialization value for the property $this->pluCode
+     * @param   string $title   Initialization value for the property $this->title
+     * @param   string $upc     Initialization value for the property $this->upc
      */
     public function __construct()
     {
         if (3 == func_num_args()) {
-            $this->pluCode  = func_get_arg(0);
-            $this->title    = func_get_arg(1);
-            $this->upc      = func_get_arg(2);
+            $this->pluCode = func_get_arg(0);
+            $this->title = func_get_arg(1);
+            $this->upc = func_get_arg(2);
         }
     }
 
@@ -57,10 +57,10 @@ class Productjson implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        $json = array();
+        $json = [];
         $json['plu_code'] = $this->pluCode;
-        $json['title']    = $this->title;
-        $json['upc']      = $this->upc;
+        $json['title'] = $this->title;
+        $json['upc'] = $this->upc;
 
         return $json;
     }
