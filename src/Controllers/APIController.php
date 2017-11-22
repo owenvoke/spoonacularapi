@@ -206,7 +206,8 @@ class APIController extends BaseController
      * @param  string  $ingredientList  Required parameter: The ingredient list of the recipe, one ingredient per line.
      * @param  integer $servings        Required parameter: The number of servings.
      * @param  string  $defaultCss      Optional parameter: Whether the widget should be styled with the default css.
-     * @param  integer $mode            Optional parameter: The mode in which the widget should be delivered. 1 = separate views (compact), 2 = all in one view (full).
+     * @param  integer $mode            Optional parameter: The mode in which the widget should be delivered.
+     *                                  1 = separate views (compact), 2 = all in one view (full).
      * @param    array $fieldParameters Additional optional form parameters are supported by this endpoint
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
@@ -269,7 +270,8 @@ class APIController extends BaseController
      * Visualize a recipe's nutritional information.
      * @param  string  $ingredientList  Required parameter: The ingredient list of the recipe, one ingredient per line.
      * @param  integer $servings        Required parameter: The number of servings.
-     * @param  string  $defaultCss      Optional parameter: Whether the ingredient list should be styled with the default css.
+     * @param  string  $defaultCss      Optional parameter: Whether the ingredient list should be styled with
+     *                                  the default css.
      * @param    array $fieldParameters Additional optional form parameters are supported by this endpoint
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
@@ -330,7 +332,8 @@ class APIController extends BaseController
      * Visualize ingredients of a recipe.
      * @param  string  $ingredientList  Required parameter: The ingredient list of the recipe, one ingredient per line.
      * @param  integer $servings        Required parameter: The initial number of servings.
-     * @param  string  $defaultCss      Optional parameter: Whether the ingredient list should be styled with the default css.
+     * @param  string  $defaultCss      Optional parameter: Whether the ingredient list should be styled with
+     *                                  the default css.
      * @param  string  $measure         Optional parameter: The initial measure, either "metric" or "us".
      * @param  string  $view            Optional parameter: The initial view, either "grid" or "list".
      * @param    array $fieldParameters Additional optional form parameters are supported by this endpoint
@@ -619,7 +622,8 @@ class APIController extends BaseController
     /**
      * Extract an ingredient from plain text.
      * @param  string  $ingredientList Required parameter: The ingredient list of the recipe, one ingredient per line.
-     * @param  integer $servings       Required parameter: The number of servings that you can make from the ingredients.
+     * @param  integer $servings       Required parameter: The number of servings that you can make from
+     *                                 the ingredients.
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -731,7 +735,9 @@ class APIController extends BaseController
     /**
      * Extract recipe data from a recipe blog or Web page.
      * @param  string $url             Required parameter: The URL of the recipe page.
-     * @param  bool   $forceExtraction Optional parameter: If true, the extraction will be triggered no matter whether we know the recipe already. Use that only if information is missing as this operation is slower.
+     * @param  bool   $forceExtraction Optional parameter: If true, the extraction will be triggered no matter
+     *                                 whether we know the recipe already. Use that only if information is missing
+     *                                 as this operation is slower.
      * @param  array  $queryParameters Additional optional query parameters are supported by this endpoint
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
@@ -792,7 +798,8 @@ class APIController extends BaseController
     /**
      * Compute a meal plan for a day.
      * @param  integer $targetCalories Required parameter: The target number of calories per day.
-     * @param  string  $timeFrame      Required parameter: For one day or a complete week, allowed values are "day" and "week".
+     * @param  string  $timeFrame      Required parameter: For one day or a complete week,
+     *                                 allowed values are "day" and "week".
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -850,6 +857,7 @@ class APIController extends BaseController
      * @param  array $productJsonArray Required parameter: A JSON Array of products.
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
+     * @throws \Unirest\Exception
      */
     public function createClassifyGroceryProductsBatch(
         $productJsonArray
@@ -955,6 +963,8 @@ class APIController extends BaseController
      * @param  Models\Productjson $productJson Required parameter: The json representation of a product.
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
+     * @throws \Unirest\Exception
+     * @throws \apimatic\jsonmapper\JsonMapperException
      */
     public function createClassifyAGroceryProduct(
         $productJson
@@ -1004,14 +1014,29 @@ class APIController extends BaseController
     /**
      * Search recipes in natural language.
      * @param  string  $query              Required parameter: The (natural language) recipe search query.
-     * @param  string  $cuisine            Optional parameter: The cuisine(s) of the recipes. One or more (comma separated) of the following: african, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, or latin american.
-     * @param  string  $diet               Optional parameter: The diet to which the recipes must be compliant. Possible values are: pescetarian, lacto vegetarian, ovo vegetarian, vegan, and vegetarian.
-     * @param  string  $excludeIngredients Optional parameter: An comma-separated list of ingredients or ingredient types that must not be contained in the recipes.
-     * @param  string  $intolerances       Optional parameter: A comma-separated list of intolerances. All found recipes must not have ingredients that could cause problems for people with one of the given tolerances. Possible values are: dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, and wheat.
-     * @param  bool    $limitLicense       Optional parameter: Whether the recipes should have an open license that allows for displaying with proper attribution.
+     * @param  string  $cuisine            Optional parameter: The cuisine(s) of the recipes.
+     *                                     One or more (comma separated) of the following: african, chinese,
+     *                                     japanese, korean, vietnamese, thai, indian, british, irish, french,
+     *                                     italian, mexican, spanish, middle eastern, jewish, american, cajun,
+     *                                     southern, greek, german, nordic, eastern european, caribbean,
+     *                                     or latin american.
+     * @param  string  $diet               Optional parameter: The diet to which the recipes must be compliant.
+     *                                     Possible values are: pescetarian, lacto vegetarian, ovo vegetarian,
+     *                                     vegan, and vegetarian.
+     * @param  string  $excludeIngredients Optional parameter: An comma-separated list of ingredients or
+     *                                     ingredient types that must not be contained in the recipes.
+     * @param  string  $intolerances       Optional parameter: A comma-separated list of intolerances.
+     *                                     All found recipes must not have ingredients that could cause problems
+     *                                     for people with one of the given tolerances. Possible values are: dairy,
+     *                                     egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut,
+     *                                     and wheat.
+     * @param  bool    $limitLicense       Optional parameter: Whether the recipes should have an open license that
+     *                                     allows for displaying with proper attribution.
      * @param  integer $number             Optional parameter: The number of results to return (between 0 and 100).
      * @param  integer $offset             Optional parameter: The number of results to skip (between 0 and 900).
-     * @param  string  $type               Optional parameter: The type of the recipes. One of the following: main course, side dish, dessert, appetizer, salad, bread, breakfast, soup, beverage, sauce, or drink.
+     * @param  string  $type               Optional parameter: The type of the recipes.
+     *                                     One of the following: main course, side dish, dessert, appetizer,
+     *                                     salad, bread, breakfast, soup, beverage, sauce, or drink.
      * @param  array   $queryParameters    Additional optional query parameters are supported by this endpoint
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
@@ -1084,13 +1109,16 @@ class APIController extends BaseController
     }
 
     /**
-     * Find a set of recipes that adhere to the given nutrient limits. All the found recipes will have macro nutrients within the calories, protein, fat, and carbohydrate limits.
+     * Find a set of recipes that adhere to the given nutrient limits. All the found recipes will have
+     * macro nutrients within the calories, protein, fat, and carbohydrate limits.
      * @param  integer $maxcalories     Optional parameter: The maximum number of calories the recipe can have.
-     * @param  integer $maxcarbs        Optional parameter: The maximum number of carbohydrates in grams the recipe can have.
+     * @param  integer $maxcarbs        Optional parameter: The maximum number of carbohydrates in grams
+     *                                  the recipe can have.
      * @param  integer $maxfat          Optional parameter: The maximum number of fat in grams the recipe can have.
      * @param  integer $maxprotein      Optional parameter: The maximum number of protein in grams the recipe can have.
      * @param  integer $mincalories     Optional parameter: The minimum number of calories the recipe must have.
-     * @param  integer $minCarbs        Optional parameter: The minimum number of carbohydrates in grams the recipe must have.
+     * @param  integer $minCarbs        Optional parameter: The minimum number of carbohydrates in grams
+     *                                  the recipe must have.
      * @param  integer $minfat          Optional parameter: The minimum number of fat in grams the recipe must have.
      * @param  integer $minProtein      Optional parameter: The minimum number of protein in grams the recipe must have.
      * @param  array   $queryParameters Additional optional query parameters are supported by this endpoint
@@ -1163,11 +1191,14 @@ class APIController extends BaseController
     }
 
     /**
-     * Find recipes that use as many of the given ingredients as possible and have as little as possible missing ingredients. This is a whats in your fridge API endpoint.
-     * @param  string  $ingredients     Required parameter: A comma-separated list of ingredients that the recipes should contain.
+     * Find recipes that use as many of the given ingredients as possible and have as little as possible
+     * missing ingredients. This is a whats in your fridge API endpoint.
+     * @param  string  $ingredients     Required parameter: A comma-separated list of ingredients that the
+     *                                  recipes should contain.
      * @param  bool    $limitLicense    Optional parameter: Whether to only show recipes with an attribution license.
      * @param  integer $number          Optional parameter: The maximal number of recipes to return (default = 5).
-     * @param  integer $ranking         Optional parameter: Whether to maximize used ingredients (1) or minimize missing ingredients (2) first.
+     * @param  integer $ranking         Optional parameter: Whether to maximize used ingredients (1)
+     *                                  or minimize missing ingredients (2) first.
      * @param  array   $queryParameters Additional optional query parameters are supported by this endpoint
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
@@ -1233,13 +1264,18 @@ class APIController extends BaseController
 
     /**
      * Create a recipe card given a recipe.
-     * @param  string  $backgroundImage Required parameter: The background image ("none","background1", or "background2").
+     * @param  string  $backgroundImage Required parameter: The background image
+     *                                  ("none","background1", or "background2").
      * @param  string  $image           Required parameter: The binary image of the recipe as jpg.
      * @param  string  $ingredients     Required parameter: The ingredient list of the recipe, one ingredient per line.
      * @param  string  $instructions    Required parameter: The instructions to make the recipe. One step per line.
-     * @param  string  $mask            Required parameter: The mask to put over the recipe image ("ellipseMask", "diamondMask", "diamondMask", "starMask", "heartMask", "potMask", "fishMask").
-     * @param  integer $readyInMinutes  Required parameter: The number of minutes it takes to get the recipe on the table.
-     * @param  integer $servings        Required parameter: The number of servings that you can make from the ingredients.
+     * @param  string  $mask            Required parameter: The mask to put over the recipe image
+     *                                  ("ellipseMask", "diamondMask", "diamondMask", "starMask",
+     *                                  "heartMask", "potMask", "fishMask").
+     * @param  integer $readyInMinutes  Required parameter: The number of minutes it takes to get the
+     *                                  recipe on the table.
+     * @param  integer $servings        Required parameter: The number of servings that you can make
+     *                                  from the ingredients.
      * @param  string  $title           Required parameter: The title of the recipe.
      * @param  string  $author          Optional parameter: The author of the recipe.
      * @param  string  $backgroundColor Optional parameter: The background color on the recipe card as a hex-string.
