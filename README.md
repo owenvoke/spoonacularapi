@@ -9,20 +9,12 @@
 
 The spoonacular Nutrition, Recipe, and Food API allows you to access over 360,000 recipes and 80,000 food products.
 
-## Structure
-
-```
-src/
-tests/
-vendor/
-```
-
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require apimatic/spoonacularapi
+$ composer require pxgamer/spoonacularapi
 ```
 
 ## Usage
