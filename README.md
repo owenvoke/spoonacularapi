@@ -14,7 +14,7 @@ The spoonacular Nutrition, Recipe, and Food API allows you to access over 360,00
 Via Composer
 
 ``` bash
-$ composer require apimatic/spoonacularapi
+$ composer require pxgamer/spoonacularapi
 ```
 
 ## Usage
