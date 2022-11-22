@@ -17,7 +17,7 @@ class Configuration
      * The base Uri for API calls
      * @var string
      */
-    public static $BASEURI = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com';
+    public static $BASEURI = 'https://api.spoonacular.com';
 
     /**
      * The Mashape application you want to use for this session.
