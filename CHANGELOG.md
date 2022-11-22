@@ -4,7 +4,12 @@ All notable changes to `spoonacularapi` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
-## v1.0.1 - 2018-06-21
+## v1.0.3 - 2022-11-22
+
+### Fixed
+- Update base URL for API
+
+## v1.0.2 - 2018-06-21
 
 ### Added
 - Add support for PHP 7.2 in Travis
